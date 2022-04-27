@@ -1,7 +1,5 @@
 package core;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.*;
@@ -103,7 +101,7 @@ public class JDBCUtils {
 	}
 	
 	public static ResultSet queryAll() throws SQLException, ClassNotFoundException {
-		final /*private static */String QUERY_ALL = "select * from word_list;";
+		final /*private static */String QUERY_ALL = "select * from wordlist;";
 		connection = JDBCUtils.getConnection();
 		statement = connection.createStatement();
 		resultSet = statement.executeQuery(QUERY_ALL);

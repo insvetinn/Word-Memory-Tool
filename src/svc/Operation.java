@@ -36,7 +36,7 @@ public class Operation {
 				meaning = input.nextLine();
 			}
 			input.close();
-			final /*private static */String ADD_BY_DEFAULT = "insert into word_list(word, meaning) values(?, ?);";
+			final /*private static */String ADD_BY_DEFAULT = "insert into wordlist(word, meaning) values(?, ?);";
 			connection = JDBCUtils.getConnection();
 			preparedStatement = connection.prepareStatement(ADD_BY_DEFAULT);
 			preparedStatement.setString(1, word);
@@ -69,8 +69,8 @@ public class Operation {
 				fieldValue = input.nextLine();
 			}
 			input.close();
-//			final String MODIFY_BY_DEFAULT = "update word_list set ?=?, modified_time=current_timestamp where id=?;";
-			final String MODIFY_BY_DEFAULT = "update word_list set meaning=?, modified_time=current_timestamp where id=?;";
+//			final String MODIFY_BY_DEFAULT = "update wordlist set ?=?, modified_time=current_timestamp where id=?;";
+			final String MODIFY_BY_DEFAULT = "update wordlist set meaning=?, modified_time=current_timestamp where id=?;";
 			
 			connection = JDBCUtils.getConnection();
 			preparedStatement = connection.prepareStatement(MODIFY_BY_DEFAULT);
@@ -94,7 +94,7 @@ public class Operation {
 				idValue = input.nextInt();
 			}
 			input.close();
-			final String REMOVE_BY_DEFAULT = "delete from word_list where id=?;";
+			final String REMOVE_BY_DEFAULT = "delete from wordlist where id=?;";
 			connection = JDBCUtils.getConnection();
 			preparedStatement = connection.prepareStatement(REMOVE_BY_DEFAULT);
 			preparedStatement.setInt(1, idValue);
